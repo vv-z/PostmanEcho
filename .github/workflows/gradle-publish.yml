@@ -2,8 +2,8 @@ name: Java CI with Gradle
 
 branches:
   - only:
-    main  # ветка git
-
+      main  # ветка git
+    
 permissions:
   contents: read
 
