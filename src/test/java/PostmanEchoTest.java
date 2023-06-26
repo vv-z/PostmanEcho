@@ -30,8 +30,5 @@ class PostmanEchoTest {
 
     }
 
-    private void body(String path, Matcher<String> hi) {
-    }
-
 
 }
