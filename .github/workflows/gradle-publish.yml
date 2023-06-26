@@ -1,11 +1,12 @@
 name: Java CI with Gradle
 
+image: Ubuntu  # образ для сборки
+
+stack: jdk 11  # версия JDK
+
 branches:
   - only:
       main  # ветка git
-    
-permissions:
-  contents: read
 
 jobs:
   build:
