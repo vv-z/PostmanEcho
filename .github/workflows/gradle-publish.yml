@@ -1,10 +1,8 @@
 name: Java CI with Gradle
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+branches:
+  - only:
+    main  # ветка git
 
 permissions:
   contents: read
@@ -20,11 +18,11 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '11'
-          distribution: 'temurin'
+
       - name: Build with Gradle
         run: chmod +x gradlew
       - install:
-      # запускаем SUT (& означает, что в фоновом режиме не блокируем терминал для запуска тестов)
-      - chmod +x gradlew
+          # запускаем SUT (& означает, что в фоновом режиме не блокируем терминал для запуска тестов)
+          chmod +x gradlew
       - build_script:
           ./gradlew test --info  # запускаем тест, флаг --info позволяет выводить больше информации
